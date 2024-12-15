@@ -1,0 +1,401 @@
+$font-family: "Roboto", sans-serif;
+$br: 8px;
+
+@mixin h2-styles($font-size) {
+  font-family: $font-family;
+  font-size: $font-size;
+  color: #77aa00;
+  margin: 0;
+}
+@mixin p-common-styles($color: black, $margin: 0, $font-size: 1rem) {
+  font-family: $font-family;
+  color: $color;
+  margin: $margin;
+  font-size: $font-size;
+}
+
+@mixin gradient-background($start-color, $end-color) {
+  background-image: linear-gradient(to right, $start-color, $end-color);
+}
+
+.gst-container {
+  width: 90%;
+  max-width: 500px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 0;
+  //font-family: $font-family;
+
+  .gst-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+    // background-color: grey;
+    // color: white;
+
+    h3 {
+      margin: 0;
+      font-size: 1rem;
+      color: #333333;
+      font-weight: 700;
+    }
+
+    .close-btn {
+      position: absolute;
+      right: 1rem;
+      margin-left: auto;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #c4c4c4;
+    }
+
+    .small-close-btn {
+      display: none;
+
+      // background-color: red;
+    }
+
+    .big-cross-icon {
+      height: 24px;
+      width: 24px;
+      // background-color: red;
+    }
+  }
+
+  .gst-body {
+    padding: 1rem;
+
+    .gst-alert {
+      margin-bottom: 1rem;
+      border: 1px solid #eeeeee;
+      border-radius: $br;
+
+      p {
+        @include p-common-styles(black, 0.2rem 0, 0.7rem);
+        display: flex;
+        align-items: center;
+        padding: 10px 3px;
+
+        span {
+          margin-right: 0.5rem;
+          margin-left: 0.5rem;
+        }
+      }
+
+      .gst-highlight {
+        @include gradient-background(#e5f9ff,#f3ffe0);
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        padding: 0.5rem;
+        border-radius: 4px;
+        margin-top: 0.5rem;
+        font-size: 0.7rem;
+        font-family: $font-family;
+
+        .icon {
+          height: 24px;
+          width: 24px;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .gst-benefits {
+      text-align: center;
+      font-family: $font-family;
+      border-radius: $br $br 0 0;
+      //background-color: #d8eaff;
+      padding: 0.5rem;
+      @include gradient-background(#d8eaff,#e9f4ff);
+     
+
+      p {
+        @include p-common-styles(black, 0.2rem 0, 0.6rem);
+        font-weight: 400;
+        margin-bottom: 0.2rem;
+      }
+
+      h2 {
+        @include h2-styles(0.9rem);
+      }
+    }
+
+    .gst-explanation {
+      text-align: center;
+      font-family:$font-family;
+      background-color: #fafafa;
+      padding: 1rem;
+      border-radius: 0 0 $br $br;
+
+      .subtext {
+        margin-top: 0;
+        font-size: 10px;
+        color: #747474;
+      }
+
+      p {
+        @include p-common-styles(#333333, 4px 0, 12px);
+        font-weight: 500 !important;
+      }
+
+      h4 {
+        margin: 0.5rem 0;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin: 0;
+        margin-bottom: 4px;
+        //margin: 0.5rem 0;
+      }
+
+      .gst-breakdown {
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem 0;
+        gap: 1rem;
+
+        .gst-box {
+          border: 1px solid #cdcdcd;
+          border-radius: $br;
+          padding: 8px 12px;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 3rem;
+          width: 8rem;
+          text-align: center;
+          box-sizing: border-box;
+
+          h3 {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #77aa00;
+          }
+
+          .red-text {
+            color: #e82217;
+          }
+
+          p {
+            @include p-common-styles(#777, 0, 0.6rem);
+            padding: 0;
+            white-space: nowrap;
+          }
+        }
+      }
+
+      .gst-paid-wallet-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .gst-paid-box {
+          display: flex;
+          flex-direction: column;
+          // background-color: #e7fff1;
+          padding: 8px;
+          padding-left: 10px;
+          // border: 2px solid #00bf36;
+          border-radius: $br;
+          margin: 1rem 0;
+          align-items: flex-start;
+          width: 55%;
+
+          background-image: url("../../assets/img/gst_box_bcg_img.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100% 100%;
+
+          .gst-thumb-icon-textbox {
+            display: flex;
+            align-items: center;
+          }
+
+          .gst-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+          }
+
+          h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #77aa00;
+          }
+
+          p {
+            @include p-common-styles(black, 0.2rem 0, 0.7rem);
+            text-align: start;
+            line-height: 1.4;
+          }
+
+          p strong {
+            font-weight: bold;
+          }
+
+          p span {
+            display: block;
+          }
+        }
+
+        .right-arrow {
+          margin-left: -12px;
+        }
+
+        .wallet-info {
+          display: flex;
+          flex-direction: column;
+          align-items: end;
+          // text-align: end;
+
+          gap: 0.5rem;
+          line-height: 1;
+
+          .wallet-prefix {
+            font-size: 0.9rem;
+            color: black;
+            margin: 0;
+            font-weight: 700;
+          }
+
+          .final-amount {
+            font-size: 1.5rem;
+            color: #77aa00;
+            margin: 0;
+            font-weight: 700;
+          }
+
+          .wallet-suffix {
+            font-size: 0.7rem;
+            color: #555;
+            margin: 0;
+            font-weight: 500;
+          }
+        }
+      }
+
+      // .final-amount {
+      //   color: #77aa00;
+      //   font-size: 1.5rem;
+      // }
+    }
+  }
+}
+
+@media (orientation: landscape) {
+  .gst-container {
+    max-height: 80vh;
+    overflow-y: auto;
+    max-width: 400px;
+
+    .gst-header {
+      background-color: #8e8e8e;
+      justify-content: flex-start; 
+
+      h3 {
+        color: white; 
+        text-align: left; 
+        margin-left: 0.5rem;
+        font-weight: bold; 
+      }
+
+      .close-btn {
+        position: absolute;
+        right: 1rem;
+        color: white;
+        text-transform: uppercase;
+      }
+    }
+
+    .gst-benefits {
+      display: flex;
+      justify-content: space-between; 
+      align-items: center;
+      padding: 2rem; 
+      font-family: $font-family;
+      background-color: #d8eaff;
+
+      p {
+        @include p-common-styles(black, 0.2rem 0, 0.9rem);
+        font-weight: 400;
+        margin: 0;
+      }
+
+      h2 {
+        @include h2-styles(1.1rem);
+      }
+    }
+  }
+}
+
+@media (orientation: portrait) {
+  .gst-container {
+    max-height: 80vh;
+    border-radius: 12px 12px 0 0;
+    // padding: 0.5rem;
+    width: 100vw;
+    // margin-top: 200px;
+    overflow-y: auto;
+    margin-bottom: 0;
+
+    .small-close-btn {
+      display: block !important;
+    }
+
+    .big-close-btn {
+      display: none;
+    }
+
+    .gst-paid-wallet-container {
+      display: block !important;
+
+      .gst-paid-box {
+        // background-color: #e7fff1 !important;
+        padding: 1rem;
+        // border: 2px solid #00bf36;
+        border-radius: $br;
+        margin: 1rem 0;
+        width: 95% !important;
+        background-size: 100% 100% !important;
+
+        align-items: center !important;
+
+        h3 {
+          text-align: center !important;
+        }
+
+        p {
+          @include p-common-styles(black, 0.2rem 0, 0.7rem);
+          text-align: center !important;
+          line-height: 1.8;
+        }
+      }
+
+      .right-arrow {
+        display: none;
+      }
+
+      .wallet-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center !important;
+        // text-align: center;
+
+        gap: 0.5rem;
+        line-height: 1;
+      }
+    }
+  }
+}
